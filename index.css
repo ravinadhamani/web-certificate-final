@@ -1,0 +1,316 @@
+
+
+#header{
+    background-color: #000;
+}
+
+/* Style the navigation bar */
+.navbar {
+    width: 90%;
+   
+    background-color: #555;
+    overflow: hidden;
+    position: relative;
+    left:120px;
+    bottom: 90px;
+  }
+  
+  /* Navbar links */
+  .navbar a {
+    float: left;
+    text-align: center;
+    padding: 25px;
+    color: rgb(227, 235, 116);
+    text-decoration: none;
+    font-size: 25px;
+    
+
+  }
+  
+  /* Navbar links on mouse-over */
+  .navbar a:hover {
+    background-color: #000;
+  }
+  
+  /* Current/active navbar link */
+  .active {
+    background-color: #89aa04;
+  }
+  
+  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  .button1 {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+    cursor: pointer;
+  }
+  
+  .button2 {background-color: #4CAF50;}
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 24px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: right;
+    width: 35%;
+    
+    background: #f1f1f1;
+    position: relative;
+    top: 10px;
+    
+  }
+  .button3 {background-color: #008CBA;}
+  
+  * {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+  
+  /* Style the submit button */
+  form.example button {
+    float: right;
+    width: 10%;
+    padding: 24px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    position: relative;
+    left: 450px;
+    bottom: 10px;
+    top:10px;
+    
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  #homepage{
+      position: relative;
+      left:50px;
+      bottom: 10px;
+  }
+
+.second-main{
+    
+    display: grid;
+    
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 0;
+    width: 25%;
+    
+  }
+
+#second-main{
+    background-color: turquoise;
+    text-align: center;
+}
+.playerimg{
+    height: 400px;
+    width: 350px;
+    
+    
+}
+.playerdetails{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    box-shadow: 1px 3px 4px #433d3d;
+    flex-direction: column;
+    background-color: #f7b42c;
+    
+}
+
+.player-card{
+    box-shadow: 1px 3px 4px #433d3d;
+    height: 500px;
+    width: 25%;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    margin: 50px 10px;
+    background-color: #f7b42c;
+    background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+  }
+
+#main-container{
+    display: flex; 
+     
+      
+  }
+.player-main{
+    display: flex;
+}
+   
+
+.mi-image{
+    height: 300px;
+    width: 320px;
+  }
+#csk-image{
+    height: 300px;
+    width: 320px;
+}
+
+#dc-image{
+    height: 300px;
+    width: 320px;
+}
+
+#kings-image{
+    height: 300px;
+    width: 320px;
+}
+
+#kkr-image{
+    height: 300px;
+    width: 320px;
+}
+
+#lucknow-image{
+    height: 300px;
+    width: 320px;
+}
+
+#rcb-image{
+    height: 300px;
+    width: 320px;
+}
+
+#rr-image{
+    height: 300px;
+    width: 320px;
+}
+
+#ahmedabad-image{
+    height: 300px;
+    width: 350px;
+}
+
+#sunrisers-image{
+    height: 300px;
+    width: 350px;
+}
+

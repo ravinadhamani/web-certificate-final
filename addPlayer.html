@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>
+            Add Player Details
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script> 
+    </head>
+      <body>
+      
+      <div class="container">
+        <div class="col-sm-6" style="border: 1px solid gray;">
+        <h2>Add Player Details</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="name">ID:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Player Id" name="email">
+              </div>
+
+          <div class="form-group">
+            <label for="email">Player name:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter player name" name="email">
+          </div>
+          <div class="form-group">
+            <label>Player From:</label>
+            <input type="text" class="form-control" id="psw" placeholder="Enter player from which team" name="batsman">
+          </div>
+          <div class="form-group">
+            <label>Price:</label>
+            <input type="text" class="form-control" id="price" placeholder="Enter player price" name="bowler">
+          </div>
+          <div class="form-group">
+            <label>Description:</label>
+            <input type="text" class="form-control" id="descp" placeholder="Enter Description" name="bowler">
+          </div>
+         
+          <button type="button" onclick="saveData()" id="save_btn" class="btn btn-default">Submit</button>
+        </form>
+      </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="col-sm-6" style="border: 1px solid gray;">
+        <h2 style="text-align: center;">Users Table</h2>
+        <div class="row">
+          <div class="col-sm-2" style="background-color: #ffdc5c;padding: 5px;">Id</div>
+          <div class="col-sm-2" style="background-color: #38b7ff;padding: 5px;">Player Name</div>
+          <div class="col-sm-2" style="background-color: #ff914d;padding: 5px;">Player From</div>
+          <div class="col-sm-2" style="background-color: #d74cb9;padding: 5px;">Price</div>
+          <div class="col-sm-4" style="background-color: #83d834;padding: 5px;">Description</div>
+
+        </div>
+        <div id="showUsers"></div>
+      </div>
+      </div>
+      
+      </body>
+      <script>
+        showData();
+function saveData()
+{
+let name,email,psw,price,descp;
+name=document.getElementById("name").value;
+email=document.getElementById("email").value;
+
+psw=document.getElementById("psw").value;
+price=document.getElementById("price").value;
+descp=document.getElementById("descp").value
+
+let user_records=new Array();
+user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+
+if(user_records.some((v)=>{return v.email==email}))
+{
+  alert("duplicate data");
+}
+else
+{
+  user_records.push({
+  "name":name,
+  "email":email,
+  "psw":psw,
+  "price":price,
+  "descp":descp
+})
+localStorage.setItem("users",JSON.stringify(user_records));
+}
+showData();
+}
+
+function showData()
+{
+  document.getElementById("showUsers").innerHTML="";
+  let user_records=new Array();
+user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+console.log("user_records", user_records)  
+if(user_records)
+  {
+    for(let i=0;i<user_records.length;i++)
+    {
+      let addDiv=document.createElement('div');
+  addDiv.className="row";
+  addDiv.innerHTML='  <div class="col-sm-2" style="padding: 10px;">'+user_records[i].name+'</div><div class="col-sm-2" style="padding: 10px;">'+user_records[i].email+'</div><div class="col-sm-2" style="padding: 10px;">'+user_records[i].psw+'</div>'+'  <div class="col-sm-2" style="padding: 10px;">'+user_records[i].price+'</div>'+'</div><div class="col-sm-4" style="padding: 10px;">'+user_records[i].descp+'</div>';
+  
+    document.getElementById("showUsers").appendChild(addDiv);
+
+    }
+  }
+  }
+  
+          </script>
+      </html>
+      
